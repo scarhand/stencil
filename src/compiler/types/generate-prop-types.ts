@@ -5,6 +5,7 @@ export const generatePropTypes = (cmpMeta: d.ComponentCompilerMeta): d.TypeInfo 
   return [
     ...cmpMeta.properties.map(cmpProp => ({
       name: cmpProp.name,
+      attribute: cmpProp.attribute,
       type: cmpProp.complexType.original,
       optional: cmpProp.optional,
       required: cmpProp.required,

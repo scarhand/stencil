@@ -57,7 +57,7 @@ const attributesToMultiLineString = (attributes: d.TypeInfo, jsxAttributes: bool
         fullList.push(`                 */`);
       }
       const optional = jsxAttributes ? !type.required : type.optional;
-      fullList.push(`                "${type.name}"${optional ? '?' : ''}: ${type.type};`);
+      fullList.push(`                "${type.attribute || type.name}"${optional ? '?' : ''}: ${type.type};`);
       return fullList;
     }, [] as string[])
     .join(`\n`);
